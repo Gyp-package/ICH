@@ -1,0 +1,259 @@
+    * {
+        margin: 0;
+        padding: 0;
+    }
+    
+    .container {
+        min-height: 1600px;
+        width: 500px;
+    }
+    
+    a {
+        color: white;
+        text-decoration: none;
+        font-size: 15px;
+    }
+    
+    .qin,
+    .drum,
+    .song,
+    .folk,
+    .overView,
+    .welcome {
+        height: 610px;
+        width: 1263px;
+        position: relative;
+    }
+    
+    .qin,
+    .drum,
+    .song,
+    .folk {
+        background-repeat: no-repeat;
+        background-size: 1263px 642px;
+    }
+    
+    .welcome {
+        background-color: white;
+    }
+    
+    .overView {
+        background-color: white;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        /* 径向渐变背景 */
+        background: radial-gradient(circle at top center, #718497, #29323c);
+    }
+    
+    .all {
+        position: absolute;
+        left: 160px;
+        color: #fff;
+        font-size: 51px;
+        font-family: STXingkai, KaiTi;
+        width: 10px;
+    }
+    
+    .OV_contain {
+        margin-left: 140px;
+        display: flex;
+        width: 90vw;
+        max-width: 900px;
+        /* border: 1px solid red; */
+        height: 400px;
+        overflow: hidden;
+    }
+    
+    .item {
+        position: relative;
+        width: 60px;
+        margin: 10px;
+        cursor: pointer;
+        border-radius: 30px;
+        background-size: cover;
+        background-position: center;
+        transition: 0.5s cubic-bezier(0.05, 0.61, 0.41, 0.95);
+        overflow: hidden;
+    }
+    
+    .item .shadow {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: 100px;
+        /* background: linear-gradient(to top,rgba(0,0,0,0.35) 65%,transparent); */
+        transition: 0.5s cubic-bezier(0.05, 0.61, 0.41, 0.95);
+    }
+    
+    .item .content {
+        display: flex;
+        position: absolute;
+        left: 10px;
+        right: 0;
+        bottom: 10px;
+        height: 40px;
+        transition: 0.5s cubic-bezier(0.05, 0.61, 0.41, 0.95);
+    }
+    
+    .item .content .icon {
+        min-width: 40px;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        background-color: #fff;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 16px;
+    }
+    
+    .item:nth-child(1) .fa {
+        color: #fc6e51;
+    }
+    
+    .item:nth-child(2) .fa {
+        color: #ffce54;
+    }
+    
+    .item:nth-child(3) .fa {
+        color: #2ecc71;
+    }
+    
+    .item:nth-child(4) .fa {
+        color: #5d9cec;
+    }
+    
+    .item .content .text {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        margin-left: 10px;
+        color: #fff;
+        width: 100%;
+    }
+    
+    .item .content .text div {
+        /* 超出显示省略号（需要设置width） */
+        width: calc(100%-70px);
+        text-overflow: ellipsis;
+        overflow: hidden;
+        white-space: nowrap;
+        opacity: 0;
+        transition: opacity 0.5s ease-out;
+    }
+    
+    .item .content .text .tit {
+        font-weight: bold;
+        font-size: 18px;
+    }
+    
+    .item .content .text .sub {
+        /* 设置过度效果 */
+        transition-delay: 0.1s;
+    }
+    
+    .item.active {
+        flex: 1;
+        margin: 0;
+        border-radius: 40px;
+    }
+    
+    .item.active .shadow {
+        background: linear-gradient(to top, rgba(0, 0, 0, 0.35) 65%, transparent);
+    }
+    
+    .item.active .content {
+        bottom: 20px;
+        left: 20px;
+    }
+    
+    .item.active .content .text div {
+        opacity: 1;
+    }
+    /* 秦腔的样式 */
+    
+    .qin {
+        background-color: beige;
+        background-image: url(./pic/秦腔.jpg);
+    }
+    
+    .folk {
+        background-color: aquamarine;
+        background-image: url(./pic/back.jpg);
+    }
+    
+    .drum {
+        background-color: cadetblue;
+        background-image: url(./pic/腰鼓.jpg);
+    }
+    
+    .song {
+        background-color: azure;
+        background-image: url(./pic/song.jpg);
+        background-size: 1263px 662px;
+    }
+    
+    .contain {
+        color: black;
+        height: 394px;
+        position: absolute;
+        top: 87px;
+        left: 85px;
+        width: 1021px;
+        font-size: 35px;
+        background-color: white;
+        opacity: 0.6;
+        border-radius: 25px;
+    }
+    
+    .detailed {
+        font-size: 20px;
+        line-height: 35px;
+        margin: 70px 30px 0;
+    }
+    
+    .detailed_title {
+        width: 85px;
+        margin-top: 10px;
+        position: absolute;
+        left: 455px;
+    }
+    
+    .drum .contain {
+        top: 50px;
+        height: 476px;
+    }
+    
+    .drum .detailed {
+        line-height: 45px;
+    }
+    
+    .song .detailed {
+        line-height: 40px;
+    }
+    
+    .song .contain {
+        top: 128px;
+        height: 302px;
+    }
+    
+    .top {
+        height: 50px;
+        width: 50px;
+        position: fixed;
+        bottom: 30px;
+        right: 30px;
+        color: white;
+        font-size: 17px;
+        font-family: STXingkai, KaiTi;
+        border-radius: 17px;
+        background-color: black;
+    }
+    
+    #to_top {
+        margin-left: 7px;
+        margin-top: 7px;
+    }
